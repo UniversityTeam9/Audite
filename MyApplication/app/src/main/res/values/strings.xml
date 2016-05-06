@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Audite</string>
+    <string name="BT_ADDRESS">30:14:12:02:36:33</string>
+    <string name="BT_UUID">00001101-0000-1000-8000-00805F9B34FB</string>
+    <string name="invalid_command">Command is invalid!</string>
+    <!--<string name="BT_ADDRESS">30:14:12:02:36:33</string>-->
+    <!--<string name="BT_ADDRESS">30:14:12:02:36:33</string>-->
+
+
+
 </resources>
