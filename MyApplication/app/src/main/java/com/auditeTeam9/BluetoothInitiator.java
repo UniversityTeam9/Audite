@@ -267,8 +267,8 @@ public class BluetoothInitiator extends Activity {
  */
 class BluetoothThread extends Thread {
     private final BluetoothSocket socket;
-//    private InputStream inStream;
-//    private OutputStream outStream;
+    private InputStream inStream;
+    private OutputStream outStream;
 
     public BluetoothThread(BluetoothDevice device) {
         BluetoothSocket tmp = null;
@@ -283,12 +283,12 @@ class BluetoothThread extends Thread {
 
     public void cancel() {
         try {
-//            if (inStream != null) {
-//                inStream.close();
-//            }
-//            if (outStream != null) {
-//                outStream.close();
-//            }
+            if (inStream != null) {
+                inStream.close();
+            }
+            if (outStream != null) {
+                outStream.close();
+            }
             if (socket != null) {
                 socket.close();
             }

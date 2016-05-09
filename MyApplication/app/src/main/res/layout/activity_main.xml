@@ -105,8 +105,8 @@
             android:layout_height="55dp"
             android:id="@+id/buttonUp"
             android:src="@mipmap/ic_up"
-            android:layout_gravity="center"
-            android:tint="#ffffff" />
+            android:tint="#ffffff"
+            android:layout_marginRight="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -120,24 +120,24 @@
             android:layout_height="55dp"
             android:id="@+id/buttonLeft"
             android:src="@mipmap/ic_left"
-            android:layout_weight="1"
-            android:tint="#ffffff" />
+            android:tint="#ffffff"
+            android:layout_marginLeft="70dp" />
 
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:id="@+id/stopButton"
             android:src="@android:drawable/ic_delete"
-            android:layout_weight="1"
-            android:tint="#ffffff" />
+            android:tint="#ffffff"
+            android:layout_marginLeft="40dp" />
 
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:id="@+id/buttonRight"
             android:src="@mipmap/ic_right"
-            android:layout_weight="1"
-            android:tint="#ffffff" />
+            android:tint="#ffffff"
+            android:layout_marginLeft="40dp" />
     </LinearLayout>
 
     <LinearLayout

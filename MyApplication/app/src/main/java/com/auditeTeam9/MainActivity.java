@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import com.myapplication.R;
 
@@ -41,20 +42,20 @@ public class MainActivity extends Activity {
     /*
      * Bluetooth indicator
      */
-    private ImageButton bluetoothButton;
+    private ImageView bluetoothButton;
 
     /*
      * Direction buttons
      */
-    private ImageButton buttonUp;
-    private ImageButton buttonDown;
-    private ImageButton buttonLeft;
-    private ImageButton buttonRight;
-    private Button voiceButton;
+    private ImageView buttonUp;
+    private ImageView buttonDown;
+    private ImageView buttonLeft;
+    private ImageView buttonRight;
+    private ImageView voiceButton;
 
-    private ImageButton buttonFrontLight;
-    private ImageButton buttonFrontProximity;
-    private ImageButton buttonRearProximity;
+    private ImageView buttonFrontLight;
+    private ImageView buttonFrontProximity;
+    private ImageView buttonRearProximity;
 
     private boolean frontLightEnabled = false;
     private boolean frontProximityEnabled = false;
@@ -66,7 +67,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        voiceButton = (Button) findViewById(R.id.voiceButton);
+        voiceButton = (ImageView) findViewById(R.id.voiceButton);
 
         /*
          *  Disable button if no recognition service is present
@@ -83,16 +84,16 @@ public class MainActivity extends Activity {
         /*
          * Find views
          */
-        bluetoothButton = (ImageButton) findViewById(R.id.bluetoothButton);
+        bluetoothButton = (ImageView) findViewById(R.id.bluetoothButton);
 
-        buttonUp = (ImageButton) findViewById(R.id.buttonUp);
-        buttonDown = (ImageButton) findViewById(R.id.buttonDown);
-        buttonLeft = (ImageButton) findViewById(R.id.buttonLeft);
-        buttonRight = (ImageButton) findViewById(R.id.buttonRight);
+        buttonUp = (ImageView) findViewById(R.id.buttonUp);
+        buttonDown = (ImageView) findViewById(R.id.buttonDown);
+        buttonLeft = (ImageView) findViewById(R.id.buttonLeft);
+        buttonRight = (ImageView) findViewById(R.id.buttonRight);
 
-        buttonFrontLight = (ImageButton) findViewById(R.id.buttonFrontLight);
-        buttonFrontProximity = (ImageButton) findViewById(R.id.buttonFrontProximity);
-        buttonRearProximity = (ImageButton) findViewById(R.id.buttonRearProximity);
+        buttonFrontLight = (ImageView) findViewById(R.id.buttonFrontLight);
+        buttonFrontProximity = (ImageView) findViewById(R.id.buttonFrontProximity);
+        buttonRearProximity = (ImageView) findViewById(R.id.buttonRearProximity);
 
         /*
          * Disable control buttons
