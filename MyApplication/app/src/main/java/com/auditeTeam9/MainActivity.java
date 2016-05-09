@@ -419,6 +419,39 @@ public class MainActivity extends Activity {
                         messageQueue.outgoing.add(
                                 new Command.Move(Command.Move.Direction.Forward).build());
                     }
+                    else if(command == "left")
+                    {
+                        messageQueue.outgoing.add(
+                                new Command.Turn(
+                                        Command.Turn.Direction.Left,
+                                        Command.Turn.INDEFINITELY
+                                ).build());
+                    }
+                    else if(command == "right")
+                    {
+                        messageQueue.outgoing.add(
+                                new Command.Turn(
+                                        Command.Turn.Direction.Right,
+                                        Command.Turn.INDEFINITELY
+                                ).build());
+                    }
+                    else if(command == "back")
+                    {
+                        messageQueue.outgoing.add(
+                                new Command.Move(Command.Move.Direction.Backward).build());
+                    }
+                    else if(command == "stop")
+                    {
+
+                    }
+                    else if(command == "fast" && speed <= 90)
+                    {
+                        speed += 10;
+                    }
+                    else if(command == "slow" && speed > 10)
+                    {
+                        speed -= 10;
+                    }
                     break;
                 }
             }
@@ -434,7 +467,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * Check if device has BT adapter and weather it is enabled
+     * Check if device has BT adapter and wheather it is enabled
      *
      * @return State of Bluetooth
      */
