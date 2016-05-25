@@ -11,10 +11,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.*;
 import com.myapplication.R;
 
 import java.io.IOException;
@@ -33,7 +30,7 @@ public class MainActivity extends Activity {
     /*
      * Bluetooth settings
      */
-    private static final String BT_ADDRESS = "30:14:12:02:36:33";
+    private static final String BT_ADDRESS = "98:D3:31:FB:36:D0";//"30:14:12:02:36:33";
     private static final String BT_UUID = "00001101-0000-1000-8000-00805F9B34FB";
     // TODO: Allow the user to add/edit commands
     private BluetoothInitiator initiator =
@@ -56,6 +53,9 @@ public class MainActivity extends Activity {
     private ImageView buttonFrontLight;
     private ImageView buttonFrontProximity;
     private ImageView buttonRearProximity;
+
+    SeekBar seekBar;
+    int barProgress = 0;
 
     private boolean frontLightEnabled = false;
     private boolean frontProximityEnabled = false;
@@ -94,6 +94,56 @@ public class MainActivity extends Activity {
         buttonFrontLight = (ImageView) findViewById(R.id.buttonFrontLight);
         buttonFrontProximity = (ImageView) findViewById(R.id.buttonFrontProximity);
         buttonRearProximity = (ImageView) findViewById(R.id.buttonRearProximity);
+
+        /*
+         * Slider
+         */
+        seekBar = (SeekBar)findViewById(R.id.seekBar);
+        //set initial value to 0 (furthest left)
+        //seekBar.setProgress(0);
+        //increment the initial progress by the value of 1
+        //seekBar.incrementProgressBy(1);
+        //maximum the slider can reach is 2
+        //seekBar.setMax(2);
+
+        seekBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progressValue, boolean fromUser) {
+
+                        switch (progressValue) {
+                            case 0:
+                                barProgress = progressValue;
+                                messageQueue.outgoing.add(
+                                        new Command.Velocity(Command.Velocity.Speed.Slow).build());
+                                break;
+                            case 1:
+                                barProgress = progressValue;
+                                messageQueue.outgoing.add(
+                                        new Command.Velocity(Command.Velocity.Speed.Mid).build());
+                                break;
+                            case 2:
+                                barProgress = progressValue;
+                                messageQueue.outgoing.add(
+                                        new Command.Velocity(Command.Velocity.Speed.Fast).build());
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                        // What to do when the user starts touching the bar
+                        // Save the progress if an initial value is needed.
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                        // When the user stops interacting with the bar
+                        // Do something
+                    }
+                });
+
+
 
         /*
          * Disable control buttons

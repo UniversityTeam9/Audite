@@ -46,16 +46,18 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="390dp"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom">
+                android:orientation="horizontal"
+                android:layout_width="390dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom">
 
             <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/seekBar"
-                android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBar"
+                    android:layout_gravity="center"
+                    android:max="2"
+                    android:progress="0"/>
         </LinearLayout>
 
         <LinearLayout
@@ -94,19 +96,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="393dp"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:paddingLeft="0dp"
-        android:background="#7495AB">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:background="#7495AB">
 
-        <ImageView
+
+    <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:id="@+id/buttonUp"
             android:src="@mipmap/ic_up"
-            android:tint="#ffffff"
-            android:layout_marginRight="10dp" />
+            android:layout_gravity="center"
+            android:tint="#ffffff" />
     </LinearLayout>
 
     <LinearLayout
@@ -120,24 +123,27 @@
             android:layout_height="55dp"
             android:id="@+id/buttonLeft"
             android:src="@mipmap/ic_left"
-            android:tint="#ffffff"
-            android:layout_marginLeft="70dp" />
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:tint="#ffffff" />
 
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:id="@+id/stopButton"
             android:src="@android:drawable/ic_delete"
-            android:tint="#ffffff"
-            android:layout_marginLeft="40dp" />
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:tint="#ffffff" />
 
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:id="@+id/buttonRight"
             android:src="@mipmap/ic_right"
-            android:tint="#ffffff"
-            android:layout_marginLeft="40dp" />
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:tint="#ffffff" />
     </LinearLayout>
 
     <LinearLayout
@@ -152,6 +158,7 @@
             android:layout_height="55dp"
             android:id="@+id/buttonDown"
             android:src="@mipmap/ic_down"
+            android:layout_gravity="center"
             android:tint="#ffffff" />
 
     </LinearLayout>

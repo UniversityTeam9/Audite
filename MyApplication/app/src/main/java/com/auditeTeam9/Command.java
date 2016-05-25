@@ -18,6 +18,28 @@ public class Command {
         String build();
     }
 
+    public static class Velocity implements Base {
+
+        public enum Speed {
+            Slow('7'),
+            Mid('8'),
+            Fast('9');
+
+            char value;
+
+            Speed(char value) { this.value = value; }
+        }
+
+        private Speed speed;
+
+        public Velocity(Speed speed) { this.speed = speed; }
+
+        @Override
+        public String build() {
+            return "" + speed.value;
+        }
+    }
+
     /**
      * Move in the specified direction
      */

@@ -23,8 +23,8 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="379dp"
-        android:layout_height="290dp"
+        android:layout_width="318dp"
+        android:layout_height="220dp"
         android:weightSum="1">
 
         <LinearLayout
@@ -34,8 +34,8 @@
             android:layout_marginLeft="100dp">
 
             <ImageView
-                android:layout_width="149dp"
-                android:layout_height="149dp"
+                android:layout_width="78dp"
+                android:layout_height="70dp"
                 android:id="@+id/voiceButton"
                 android:src="@android:drawable/ic_btn_speak_now"
                 android:tint="#5fb209"
@@ -47,20 +47,22 @@
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="390dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom|center">
 
             <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/seekBar"
-                android:layout_gravity="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/seekBar"
+                    android:layout_gravity="center"
+                    android:max="2"
+                    android:progress="0"/>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="390dp"
+            android:layout_width="318dp"
             android:layout_height="wrap_content">
 
             <ImageView
@@ -94,7 +96,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="393dp"
+        android:layout_width="322dp"
         android:layout_height="60dp"
         android:gravity="center"
         android:paddingLeft="0dp"
