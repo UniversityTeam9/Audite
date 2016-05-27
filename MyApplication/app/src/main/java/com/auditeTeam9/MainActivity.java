@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
     /*
      * Bluetooth settings
      */
-    private static final String BT_ADDRESS = "98:D3:31:FB:36:D0";//"30:14:12:02:36:33";
+    private static final String BT_ADDRESS = "30:14:12:02:36:33";
     private static final String BT_UUID = "00001101-0000-1000-8000-00805F9B34FB";
     // TODO: Allow the user to add/edit commands
     private BluetoothInitiator initiator =
@@ -49,6 +49,8 @@ public class MainActivity extends Activity {
     private ImageView buttonLeft;
     private ImageView buttonRight;
     private ImageView voiceButton;
+    private ImageView stopButton;
+
 
     private ImageView buttonFrontLight;
     private ImageView buttonFrontProximity;
@@ -85,6 +87,7 @@ public class MainActivity extends Activity {
          * Find views
          */
         bluetoothButton = (ImageView) findViewById(R.id.bluetoothButton);
+        stopButton = (ImageView) findViewById(R.id.stopButton);
 
         buttonUp = (ImageView) findViewById(R.id.buttonUp);
         buttonDown = (ImageView) findViewById(R.id.buttonDown);
@@ -156,9 +159,9 @@ public class MainActivity extends Activity {
         bluetoothButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(btIni.checkBluetooth()) {
+                if (btIni.checkBluetooth()) {
                     setBluetoothEnabled(!bluetoothEnabled);
-                }else{
+                } else {
                     startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), btIni.BT_ENABLE);
                 }
             }
@@ -234,6 +237,23 @@ public class MainActivity extends Activity {
                                         Command.Turn.Direction.Right,
                                         Command.Turn.INDEFINITELY
                                 ).build());
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        messageQueue.outgoing.add(new Command.Stop().build());
+                        break;
+                }
+
+                return false;
+            }
+        });
+        stopButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        messageQueue.outgoing.add(
+                                new Command.Stop().build());
                         break;
 
                     case MotionEvent.ACTION_UP:
@@ -420,7 +440,7 @@ public class MainActivity extends Activity {
      */
 
     // List of available commands
-    private static final String[] commands = {"go", "back", "left", "right", "stop", "faster", "slower"};
+    private static final String[] commands = {"go", "back", "left", "right", "stop"};
     // TODO: Allow the user to add/edit commands
     private int speed;
     boolean foundCommand;
@@ -493,16 +513,10 @@ public class MainActivity extends Activity {
                     }
                     else if(command == "stop")
                     {
+                        messageQueue.outgoing.add(new Command.Stop().build());
 
                     }
-                    else if(command == "fast" && speed <= 90)
-                    {
-                        speed += 10;
-                    }
-                    else if(command == "slow" && speed > 10)
-                    {
-                        speed -= 10;
-                    }
+
                     break;
                 }
             }
