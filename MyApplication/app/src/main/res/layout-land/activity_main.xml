@@ -36,12 +36,10 @@
                 android:layout_width="149dp"
                 android:layout_height="155dp"
                 android:id="@+id/voiceButton"
-                android:src="@android:drawable/ic_btn_speak_now"
-                android:tint="#3bc156"
+                android:src="@mipmap/testtttt"
                 android:layout_weight="1"
-                android:layout_marginTop="20dp"
                 android:onClick="speakButtonClicked"
-                android:layout_gravity="center" />
+                android:layout_marginLeft="-10dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -56,7 +54,8 @@
                 android:id="@+id/seekBar"
                 android:layout_gravity="center"
                 android:max="2"
-                android:progress="0"/>
+                android:progress="0"
+                android:layout_marginBottom="-20dp" />
         </LinearLayout>
 
         <LinearLayout
