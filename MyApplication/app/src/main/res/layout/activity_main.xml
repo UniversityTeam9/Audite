@@ -69,10 +69,10 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Speed"
                 android:id="@+id/textView3"
-                android:textColor="#4fa485"
+                android:textColor="#32556B"
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
-                android:textStyle="bold"
+                android:textStyle="normal"
                 android:layout_marginBottom="10dp"
                 android:textSize="@dimen/activity_horizontal_margin" />
         </LinearLayout>
@@ -97,7 +97,7 @@
                 android:layout_height="48dp"
                 android:id="@+id/buttonFrontLight"
                 android:src="@mipmap/ic_lightbulb_outline_black_24dp"
-                android:tint="#4fa485"
+                android:tint="@android:color/holo_blue_dark"
                 android:layout_weight="2"
                 android:onClick="#FFC605"
                 android:nestedScrollingEnabled="true" />
@@ -130,8 +130,7 @@
                 android:textColor="#ffffff"
                 android:textSize="@dimen/activity_horizontal_margin"
                 android:layout_weight="1"
-                android:layout_marginLeft="40dp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="40dp" />
 
             <TextView
                 android:layout_width="92dp"
@@ -144,8 +143,7 @@
                 android:hint="#FFC605"
                 android:textColor="#ffffff"
                 android:layout_weight="1"
-                android:layout_marginLeft="150dp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="150dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -159,24 +157,24 @@
 
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:id="@+id/buttonUp"
             android:src="@mipmap/ic_up"
             android:layout_gravity="center"
             android:tint="#ffffff"
-            android:layout_marginRight="19dp" />
+            android:layout_marginRight="18dp" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#7495AB">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:id="@+id/buttonLeft"
             android:src="@mipmap/ic_left"
             android:layout_weight="1"
@@ -186,7 +184,7 @@
 
         <ImageView
             android:layout_width="55dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:id="@+id/stopButton"
             android:src="@android:drawable/ic_delete"
             android:layout_weight="1"
@@ -195,8 +193,8 @@
             android:background="#FF3A5D73" />
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:id="@+id/buttonRight"
             android:src="@mipmap/ic_right"
             android:layout_weight="1"
@@ -213,13 +211,13 @@
         android:background="#FF3A5D73">
 
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:id="@+id/buttonDown"
             android:src="@mipmap/ic_down"
             android:layout_gravity="center|bottom"
             android:tint="#ffffff"
-            android:layout_marginBottom="70dp" />
+            android:layout_marginBottom="60dp" />
 
     </LinearLayout>
 
