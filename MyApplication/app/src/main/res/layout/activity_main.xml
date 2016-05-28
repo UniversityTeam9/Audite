@@ -182,17 +182,18 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:tint="#ffffff"
-            android:background="#FF3A5D73" />
+            android:background="#FF3A5D73"
+            android:layout_marginRight="-38dp" />
 
         <ImageView
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:id="@+id/stopButton"
-            android:src="@android:drawable/ic_delete"
+            android:src="@mipmap/xbutton"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:tint="#ffffff"
-            android:background="#FF3A5D73" />
+            android:background="#FF3A5D73"
+            android:tint="#ffffff" />
 
         <ImageView
             android:layout_width="55dp"
@@ -202,7 +203,8 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:tint="#ffffff"
-            android:background="#FF3A5D73" />
+            android:background="#FF3A5D73"
+            android:layout_marginLeft="-30dp" />
     </LinearLayout>
 
     <LinearLayout
