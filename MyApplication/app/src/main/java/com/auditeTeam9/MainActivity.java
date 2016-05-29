@@ -167,6 +167,7 @@ public class MainActivity extends Activity {
             }
         });
 
+
         /*
          * Connect actions
          */
@@ -440,7 +441,7 @@ public class MainActivity extends Activity {
      */
 
     // List of available commands
-    private static final String[] commands = {"go", "back", "left", "right", "stop"};
+            "turn on Bluetooth","turn off Bluetooth"};
     // TODO: Allow the user to add/edit commands
     private int speed;
     boolean foundCommand;
@@ -514,6 +515,77 @@ public class MainActivity extends Activity {
                     else if(command == "stop")
                     {
                         messageQueue.outgoing.add(new Command.Stop().build());
+
+                    }
+
+                    else if(command == "front sensor on")
+                    {
+                                messageQueue.outgoing.add(new Command.Toggle(
+                                        Command.Toggle.Feature.FrontProximity,
+                                        Command.Toggle.Status.ON
+
+
+                                ).build());
+                        buttonFrontProximity.setColorFilter(getToggleColor(true));
+
+                    }
+                    else if(command == "front sensor off") {
+                        messageQueue.outgoing.add(new Command.Toggle(
+                                Command.Toggle.Feature.FrontProximity,
+                                Command.Toggle.Status.OFF
+
+
+                        ).build());
+                        buttonFrontProximity.setColorFilter(getToggleColor(false));
+
+                    }
+
+                    else if(command == "rear sensor on")
+                    {
+                        messageQueue.outgoing.add(new Command.Toggle(
+                                Command.Toggle.Feature.RearProximity,
+                                Command.Toggle.Status.ON
+
+
+                        ).build());
+                        buttonRearProximity.setColorFilter(getToggleColor(true));
+
+                    }
+                    else if(command == "rear sensor off") {
+                        messageQueue.outgoing.add(new Command.Toggle(
+                                Command.Toggle.Feature.RearProximity,
+                                Command.Toggle.Status.OFF
+
+
+                        ).build());
+                        buttonRearProximity.setColorFilter(getToggleColor(false));
+
+                    }
+                        messageQueue.outgoing.add(new Command.Toggle(
+                                Command.Toggle.Feature.FrontLight,
+                                Command.Toggle.Status.ON
+
+
+                        ).build());
+                        buttonFrontLight.setColorFilter(getToggleColor(true));
+
+
+                    }
+                        messageQueue.outgoing.add(new Command.Toggle(
+                                Command.Toggle.Feature.FrontLight,
+                                Command.Toggle.Status.OFF
+
+
+                        ).build());
+                        buttonFrontLight.setColorFilter(getToggleColor(false));
+
+
+                    }
+                    else if(command == "turn on Bluetooth") {
+
+                        setBluetoothEnabled(true);
+                        bluetoothButton.setColorFilter(getToggleColor(true));
+
 
                     }
 

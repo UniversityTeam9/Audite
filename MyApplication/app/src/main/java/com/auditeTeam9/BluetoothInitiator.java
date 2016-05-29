@@ -283,12 +283,6 @@ class BluetoothThread extends Thread {
 
     public void cancel() {
         try {
-//            if (inStream != null) {
-//                inStream.close();
-//            }
-//            if (outStream != null) {
-//                outStream.close();
-//            }
             if (socket != null) {
                 socket.close();
             }
