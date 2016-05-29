@@ -441,7 +441,8 @@ public class MainActivity extends Activity {
      */
 
     // List of available commands
-            "turn on Bluetooth","turn off Bluetooth"};
+    private static final String[] commands = {"go", "back", "left", "right", "stop", "front sensor on", "front sensor off","rear sensor on", "rear sensor off","lights off", "lights on",
+            "turn on Bluetooth",};
     // TODO: Allow the user to add/edit commands
     private int speed;
     boolean foundCommand;
@@ -561,6 +562,7 @@ public class MainActivity extends Activity {
                         buttonRearProximity.setColorFilter(getToggleColor(false));
 
                     }
+                    else if(command == "lights on") {
                         messageQueue.outgoing.add(new Command.Toggle(
                                 Command.Toggle.Feature.FrontLight,
                                 Command.Toggle.Status.ON
@@ -571,6 +573,7 @@ public class MainActivity extends Activity {
 
 
                     }
+                    else if(command == "lights off") {
                         messageQueue.outgoing.add(new Command.Toggle(
                                 Command.Toggle.Feature.FrontLight,
                                 Command.Toggle.Status.OFF
