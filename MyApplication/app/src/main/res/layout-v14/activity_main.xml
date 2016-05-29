@@ -69,7 +69,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Speed"
                 android:id="@+id/textView3"
-                android:textColor="#4fa485"
+                android:textColor="#6adfb4"
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp"
                 android:textStyle="bold"
@@ -81,7 +81,7 @@
             android:orientation="horizontal"
             android:layout_width="390dp"
             android:layout_height="wrap_content"
-            android:background="#FFC605">
+            android:background="#6adfb4">
 
             <ImageView
                 android:layout_width="48dp"
@@ -97,7 +97,7 @@
                 android:layout_height="48dp"
                 android:id="@+id/buttonFrontLight"
                 android:src="@mipmap/ic_lightbulb_outline_black_24dp"
-                android:tint="#4fa485"
+                android:tint="#f7d45d"
                 android:layout_weight="2"
                 android:onClick="#FFC605"
                 android:nestedScrollingEnabled="true" />
@@ -118,7 +118,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#4fa485">
+            android:background="#f7d45d">
 
             <TextView
                 android:layout_width="92dp"
@@ -165,7 +165,7 @@
             android:src="@mipmap/ic_up"
             android:layout_gravity="center"
             android:tint="#ffffff"
-            android:layout_marginRight="18dp" />
+            android:layout_marginRight="22dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -182,7 +182,8 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:tint="#ffffff"
-            android:background="#FF3A5D73" />
+            android:background="#FF3A5D73"
+            android:layout_marginRight="-38dp" />
 
         <ImageView
             android:layout_width="55dp"
@@ -202,7 +203,8 @@
             android:layout_weight="1"
             android:layout_gravity="center"
             android:tint="#ffffff"
-            android:background="#FF3A5D73" />
+            android:background="#FF3A5D73"
+            android:layout_marginLeft="-30dp" />
     </LinearLayout>
 
     <LinearLayout
