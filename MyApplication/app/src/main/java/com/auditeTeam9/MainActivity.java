@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-//import BluetoothInitiator;
 
 public class MainActivity extends Activity {
 
@@ -441,8 +440,8 @@ public class MainActivity extends Activity {
      */
 
     // List of available commands
-    private static final String[] commands = {"go", "back", "left", "right", "stop", "front sensor on", "front sensor off","rear sensor on", "rear sensor off","lights off", "lights on",
-            "turn on Bluetooth",};
+    private static final String[] commands = {"forward", "back", "left", "right", "stop", "front on", "front disabled","back on", "back disabled","lights off", "lights on",
+            "turn on bluetooth",};
     // TODO: Allow the user to add/edit commands
     private int speed;
     boolean foundCommand;
@@ -487,7 +486,7 @@ public class MainActivity extends Activity {
                 if(matches.contains(command))
                 {
                     foundCommand = true;
-                    if(command == "go")
+                    if(command == "forward")
                     {
                         messageQueue.outgoing.add(
                                 new Command.Move(Command.Move.Direction.Forward).build());
@@ -519,7 +518,7 @@ public class MainActivity extends Activity {
 
                     }
 
-                    else if(command == "front sensor on")
+                    else if(command == "front on")
                     {
                                 messageQueue.outgoing.add(new Command.Toggle(
                                         Command.Toggle.Feature.FrontProximity,
@@ -530,7 +529,7 @@ public class MainActivity extends Activity {
                         buttonFrontProximity.setColorFilter(getToggleColor(true));
 
                     }
-                    else if(command == "front sensor off") {
+                    else if(command == "front disabled") {
                         messageQueue.outgoing.add(new Command.Toggle(
                                 Command.Toggle.Feature.FrontProximity,
                                 Command.Toggle.Status.OFF
@@ -541,7 +540,7 @@ public class MainActivity extends Activity {
 
                     }
 
-                    else if(command == "rear sensor on")
+                    else if(command == "back on")
                     {
                         messageQueue.outgoing.add(new Command.Toggle(
                                 Command.Toggle.Feature.RearProximity,
@@ -552,7 +551,7 @@ public class MainActivity extends Activity {
                         buttonRearProximity.setColorFilter(getToggleColor(true));
 
                     }
-                    else if(command == "rear sensor off") {
+                    else if(command == "back disabled") {
                         messageQueue.outgoing.add(new Command.Toggle(
                                 Command.Toggle.Feature.RearProximity,
                                 Command.Toggle.Status.OFF
@@ -584,7 +583,7 @@ public class MainActivity extends Activity {
 
 
                     }
-                    else if(command == "turn on Bluetooth") {
+                    else if(command == "turn on bluetooth") {
 
                         setBluetoothEnabled(true);
                         bluetoothButton.setColorFilter(getToggleColor(true));

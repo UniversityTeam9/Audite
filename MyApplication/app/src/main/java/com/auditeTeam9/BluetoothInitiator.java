@@ -27,9 +27,6 @@ public class BluetoothInitiator extends Activity {
     private boolean stoppingConnection;
 
 
-//    private InputStream inStream;
-//    private OutputStream outStream;
-
     // Constants to indicate message contents
     public static final int MSG_OK = 0;
     public static final int MSG_READ = 1;
@@ -267,8 +264,7 @@ public class BluetoothInitiator extends Activity {
  */
 class BluetoothThread extends Thread {
     private final BluetoothSocket socket;
-//    private InputStream inStream;
-//    private OutputStream outStream;
+
 
     public BluetoothThread(BluetoothDevice device) {
         BluetoothSocket tmp = null;
